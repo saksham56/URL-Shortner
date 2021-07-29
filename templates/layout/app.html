@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+    <title>{{title}} | SemiKolan | Never Stop Building</title>
+    
+    <!-- Style.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/favicon.ico') }}" />
+
+
+    
+
+    {% include 'layout/styles.html' %}
+    {% include 'layout/metatags.html' %}
+    {% include 'layout/gtags.html' %}
+
+</head>
+
+<body>
+    {% include 'partials/header.html' %}
+    {% block body %}{% endblock %}
+    {% include 'partials/footer.html' %}
+    {% include 'layout/scripts.html' %}
+    {% include 'partials/loader.html' %}
+    <script type="text/javascript" src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+        
+</body>
+
+</html>
