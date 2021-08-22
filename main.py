@@ -61,5 +61,35 @@ def short(slug):
         getUserData(request.path)
         return render_template('pages/404.html')
 
+# add new url to database
+@app.route('/add', methods=['POST'])
+def add():
+    getUserData("Add Page")
+    if request.method == 'POST':
+        url = request.form['url']
+        slug = request.form['slug']
+        if url == '':
+            return render_template('index.html', error=True)
+        if slug == '':
+            slug = url
+        url = URL(url=url, slug=slug)
+        db.session.add(url)
+        db.session.commit()
+        return 1
+
+#check slug is already in database
+@app.route('/check', methods=['POST'])
+def check():
+    getUserData("Check Page")
+    if request.method == 'POST':
+        slug = request.form['slug']
+        url = URL.query.filter_by(slug=slug).first()
+        if url:
+            return 1
+        else:
+            return 0
+    
+    
+
 if __name__ == '__main__':
     app.run()
