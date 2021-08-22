@@ -8,16 +8,34 @@
     <div class="demo-flex-spacer"></div>
   
     <div class="webflow-style-input">
-      <input class="" type="email" placeholder="slug"></input>
+      <input class="" type="email" placeholder="slug" value="semiurl.xyz/">
       <button type="submit"><i class="icon ion-android-arrow-forward"></i></button>
     </div>
   
     <div class="demo-flex-spacer"></div>
     <!-- <h1 class="demo">Webflow-style input</h1>
     <a class="demo" href="https://webflow.com/cms" title="Webflow CMS">https://webflow.com/cms</a> -->
-  
+
+    
+    
   </div>
+ 
 
+{% endblock %}
 
+{% block scripts %}
 
+<script>
+  console.log('hello world');
+  $("input").keydown(function(e) {
+    console.log('f');
+    var oldvalue=$(this).val();
+    var field=this;
+    setTimeout(function () {
+        if(field.value.indexOf('semiurl.xyz/') !== 0) {
+            $(field).val(oldvalue);
+        } 
+    }, 1);
+});
+</script>
 {% endblock %}
