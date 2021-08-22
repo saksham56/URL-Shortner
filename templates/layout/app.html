@@ -17,6 +17,7 @@
     {# {% include 'layout/styles.html' %} #}
     {% include 'layout/metatags.html' %}
     {% include 'layout/gtags.html' %}
+    {% block styles %}{% endblock %}
 
 </head>
 
@@ -27,6 +28,7 @@
     {% include 'layout/scripts.html' %}
     {% include 'partials/loader.html' %}
     <script type="text/javascript" src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+    {% block scripts %}{% endblock %}
         
 </body>
 
