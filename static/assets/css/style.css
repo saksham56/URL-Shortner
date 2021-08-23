@@ -7,7 +7,7 @@ Changed:
 ==================================================== */
 html {
     box-sizing: border-box;
-    font-size: 10px;
+    font-size: 16px;
   }
   
   *, *:before, *:after {
@@ -74,7 +74,9 @@ html {
   .container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
     max-width: 1600px;
     padding: 0 15px;
     margin: 0 auto;
@@ -105,7 +107,7 @@ html {
     max-width: 400px;
     margin: 0 auto;
     border-radius: 2px;
-    padding: 1.4rem 2rem 1.6rem;
+    padding: 1.1rem 1.4rem 1.2rem;
     background: rgba(57, 63, 84, 0.8);
   }
   .webflow-style-input:after {
@@ -128,8 +130,8 @@ html {
   .webflow-style-input input {
     flex-grow: 1;
     color: #BFD2FF;
-    font-size: 1.8rem;
-    line-height: 2.4rem;
+    font-size: 1.2rem;
+    line-height: 1rem;
     vertical-align: middle;
   }
   .webflow-style-input input::-webkit-input-placeholder {
