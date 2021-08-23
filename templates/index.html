@@ -4,15 +4,26 @@
 
 <div class="container">
   
-    skln.xyz/
-    <div class="demo-flex-spacer"></div>
+    <!-- <div class="demo-flex-spacer"></div> -->
+
   
+    
     <div class="webflow-style-input">
-      <input class="" type="email" placeholder="slug" value="semiurl.xyz/">
-      <button type="submit"><i class="icon ion-android-arrow-forward"></i></button>
+      <input class=""  name="slug" placeholder="slug" value="semiurl.xyz/">
+      <!-- <button type="submit"> -->
+        
+<div class="spinner-border text-light" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+      <!-- </button> -->
+    </div>
+
+    <div class="webflow-style-input">
+      <input class=""  name="link" placeholder="Enter your Link you want to shorten">
+      <button type="submit"><i class="fa fa-arrow-circle-right"></i></button>
     </div>
   
-    <div class="demo-flex-spacer"></div>
+    <!-- <div class="demo-flex-spacer"></div> -->
     <!-- <h1 class="demo">Webflow-style input</h1>
     <a class="demo" href="https://webflow.com/cms" title="Webflow CMS">https://webflow.com/cms</a> -->
 
@@ -27,7 +38,7 @@
 
 <script>
   console.log('hello world');
-  $("input").keydown(function(e) {
+  $("input[name='slug']").keydown(function(e) {
     console.log('f');
     var oldvalue=$(this).val();
     var field=this;
