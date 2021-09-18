@@ -80,15 +80,19 @@ def add():
 #check slug is already in database
 @app.route('/check', methods=['POST'])
 def check():
-    getUserData("Check Page")
+    # getUserData("Check Page")
     if request.method == 'POST':
         slug = request.form['slug']
-        url = URL.query.filter_by(slug=slug).first()
-        if url:
-            return 1
-        else:
-            return 0
-    
+        if slug is '':
+            return {'data':0}
+        try:
+            url = URL.query.filter_by(slug=slug).first()
+            if url:
+                return {'data':0}
+            else:
+                return {'data':1}
+        except:
+            return {'data':0}
     
 
 if __name__ == '__main__':

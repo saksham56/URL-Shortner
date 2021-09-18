@@ -1,7 +1,12 @@
 {% set title = "Home" %} 
 {% extends "layout/app.html" %} 
 {% block body %}
-
+<style type="text/css">
+    button[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+</style>
 <div class="container">
   
     <!-- <div class="demo-flex-spacer"></div> -->
@@ -11,16 +16,16 @@
     <div class="webflow-style-input">
       <input class=""  name="slug" placeholder="slug" value="semiurl.xyz/">
       <!-- <button type="submit"> -->
-        
-<div class="spinner-border text-light" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>
+        <div class="result">
+
+          
+        </div>
       <!-- </button> -->
     </div>
 
     <div class="webflow-style-input">
-      <input class=""  name="link" placeholder="Enter your Link you want to shorten">
-      <button type="submit"><i class="fa fa-arrow-circle-right"></i></button>
+      <input class=""  name="link" placeholder="Enter your Link you want to shorten" required>
+      <button type="submit" name="submitbtn" disabled><i class="fa fa-arrow-circle-right"></i></button>
     </div>
   
     <!-- <div class="demo-flex-spacer"></div> -->
@@ -39,7 +44,6 @@
 <script>
   console.log('hello world');
   $("input[name='slug']").keydown(function(e) {
-    console.log('f');
     var oldvalue=$(this).val();
     var field=this;
     setTimeout(function () {
@@ -47,6 +51,34 @@
             $(field).val(oldvalue);
         } 
     }, 1);
+});
+$("input[name='slug']").keyup(function(e) {
+  slug = e.target.value.replace('semiurl.xyz/','')
+  console.log("Slug : ",`-${slug}-`);
+  $("button[name='submitbtn']").attr("disabled", true);
+  $('.result').html(`
+  <div class="spinner-border spinner-border-sm text-light" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  `)
+  // Make ajax request to check slug is available or not
+  $.ajax({
+    url: "/check",
+    type: "POST",
+    data: {
+      slug: slug
+    },
+    success: function(data) {
+      console.log('Data Recieved:',data)
+      if (data.data == 1) {
+        $('.result').html('<i class="fa fa-check text-light"></i>')
+        $("button[name='submitbtn']").attr("disabled", false);
+      } else {
+        $('.result').html('<i class="fa fa-times text-light"></i>')
+        $("button[name='submitbtn']").attr("disabled", true);
+      }
+    }
+  });
 });
 </script>
 {% endblock %}
