@@ -26,10 +26,10 @@ Tis project is about to shortner the URL with the help of python.
 
 ### Built With
 This project is build with following languages and framework
-* [Python](https://docs.python.org/release/3.9.7/)
-* [JavaScript](https://www.javascript.com/)
-* [HTML](https://html.com)
-* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [Python](https:://docs.python.org/release/3.9.7/)
+* [JavaScript](https:://www.javascript.com/)
+* [HTML](https:://html.com)
+* [CSS](https:://developer.mozilla.org/en-US/docs/Web/CSS)
 
 
 
@@ -46,14 +46,24 @@ To get a local copy up and running follow these simple example steps.
 *  Text editor
 
 ### Installation
+1. Fork the repo in your github account.
 
 2. Clone the repo
 ```sh
 git clone https:://github.com/<your_username_>/URL-Shortner.git
 ```
-3. Install packages
+3. Move toward the Root directory .
+```sh
+   cd <Directory name>
+```
+4. Install packages
 ```sh
  pip install -r requirements.txt
+```
+5. Command for starting Flask Server
+```sh
+    set FLASK_APP=hello
+    flask run
 ```
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -64,7 +74,4 @@ Contributions are what make the open source community such an amazing place to b
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
-
+5. Open a Pull Request.
