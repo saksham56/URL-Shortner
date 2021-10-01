@@ -26,10 +26,10 @@ Tis project is about to shortner the URL with the help of python.
 
 ### Built With
 This project is build with following languages and framework
-* [Python](https:://docs.python.org/release/3.9.7/)
-* [JavaScript](https:://www.javascript.com/)
-* [HTML](https:://html.com)
-* [CSS](https:://developer.mozilla.org/en-US/docs/Web/CSS)
+* [Python](https://docs.python.org/release/3.9.7/)
+* [JavaScript](https://www.javascript.com/)
+* [HTML](https://html.com)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
 
 
@@ -40,9 +40,7 @@ This is an example of how you may give instructions on setting up your project l
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-
-* Python
-
+*  Python
 *  Text editor
 
 ### Installation
@@ -50,11 +48,11 @@ To get a local copy up and running follow these simple example steps.
 
 2. Clone the repo
 ```sh
-git clone https:://github.com/<your_username_>/URL-Shortner.git
+git clone https://github.com/<your_username_>/URL-Shortner.git
 ```
 3. Move toward the Root directory .
 ```sh
-   cd <Directory name>
+   cd URL-Shortner
 ```
 4. Install packages
 ```sh
@@ -62,8 +60,7 @@ git clone https:://github.com/<your_username_>/URL-Shortner.git
 ```
 5. Command for starting Flask Server
 ```sh
-    set FLASK_APP=hello
-    flask run
+    python main.py
 ```
 <!-- CONTRIBUTING -->
 ## Contributing
